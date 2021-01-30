@@ -8,16 +8,16 @@ do
 	read a
 	if [[ $a  == `cat /etc/passwd | cut -d ':' -f1 | grep $a` ]]
    
-       	then
+       		then
 		echo "Bun venit, $a!"
-	   break;
+	        break;
 
-else 
+	else 
 	echo " User invalid, reincercati "
-fi
+	fi
 done
 
-	while [[ $valid ]]
+while [[ $valid ]]
 	do
 	echo $'\n'
 	echo "Alegeti o optiune"
@@ -86,22 +86,18 @@ case $alegere in
 		clear
 
 		for ((  i=1; i<=MAX_NO; i++))
+			do
+        		for (( s=MAX_NO; s>=1; s-- ))
+        			do
+               			 echo -n " " 
+        			done
 
-		do
-        	for (( s=MAX_NO; s>=1; s-- ))
-        	do
-                echo -n " " 
-        	done
-
-        	for (( j=1; j<=i; j++ ))
-        	do
-                echo -n "."
-
-        	done
-
-       		 echo ""
-
-	done
+        		for (( j=1; j<=i; j++ ))
+        		do
+               		 echo -n "."
+        		done
+       		        echo ""
+			done
 
 		##########SECOND_STAGE##########
 
@@ -111,13 +107,12 @@ case $alegere in
  	        	for (( s=i; s<=MAX_NO; s++ ))
         		 do
         	         echo -n " "
-         	        	done
+         	         done
 		 for (( j=1; j<=i; j++ ))
  			do
  	                 echo -n "."
-	 		  done
- 			   echo ""
-
+	 		done
+ 	         echo ""
  		done;;
 	
 	7)	echo "Afisare informatii de sistem"
